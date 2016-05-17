@@ -1,2 +1,2 @@
-# ccr-biocore-temp
-termporary placeholder repository for CCR Bio Core application
+# ccr-biocore
+Repository for CCR Bioinformatics Core application
