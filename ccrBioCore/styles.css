@@ -1,13 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=PT+Sans);
 @import url(https://fonts.googleapis.com/css?family=Lato);
 
-body {
-    font-family: 'PT Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-    font-weight: normal;
-    font-size: 14px;
-    background: url(images/brackets.png) repeat;
-}
-
 #topBar {
     color: #888;
     padding: 0 20px;
@@ -153,6 +146,13 @@ nav li a {
 .ext {
     background: url(images/extlink.png) right center no-repeat;
     padding-right: 12px;
+}
+
+.magnify {
+    background-color:#555;
+    background:rgba(0, 0, 0, 0.25);
+    border:5px solid rgba(0, 0, 0, 0);
+    z-index: 2000; /*make index higher than modal */
 }
 
 footer li a,

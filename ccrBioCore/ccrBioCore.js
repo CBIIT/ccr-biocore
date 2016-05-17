@@ -34,11 +34,16 @@ function getImages() {
     })).done(function (coreImages, pwImages) {
         buildGalleryRows(coreImages, "#coreGallery");
         buildGalleryRows(pwImages, "#pathwayGallery");
-
         $("a.expand").on("click", function () {
             var fullSize = $(this).find("img").attr("data-full-img");
             $("#modal .modal-title").html($(this).find("img").attr('name'));
-            $("#modal .modal-body").append("<img class='img-thumbnail' src='" + fullSize + "' />");
+            $("#modal .modal-body").append("<img id='fullImage' class='img-thumbnail' src='" + fullSize + "' />");
+
+            $("img#fullImage").loupe({
+                loupe: "magnify",
+                height: 150,
+                width: 300
+            });
             $("#modal").modal('show');
         });
     });
