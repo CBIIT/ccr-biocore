@@ -1,7 +1,7 @@
 $(function () {
     getImages();
     $('#modal').on('hidden.bs.modal', function (e) {
-        $(this).find(".modal-body").html();
+        $(this).find(".modal-body, .modal-title").html("");
     });
 
     $(".thumbnail a").hover(function () {
@@ -12,11 +12,14 @@ $(function () {
     });
 
     $(".showGallery").on('click keypress', function () {
-        if (this.id == "core")
+        if (this.id == "core") {
             $("#pathwayGallery").removeClass("show");
-        else
+            $("#pathway").parent().removeClass('active');
+        } else {
             $("#coreGallery").removeClass("show");
-
+            $("#core").parent().removeClass('active');
+        }
+        $(this).parent().addClass("active");
         $("#" + this.id + "Gallery").addClass("show");
     });
 });
@@ -34,6 +37,7 @@ function getImages() {
 
         $("a.expand").on("click", function () {
             var fullSize = $(this).find("img").attr("data-full-img");
+            $("#modal .modal-title").html($(this).find("img").attr('name'));
             $("#modal .modal-body").append("<img class='img-thumbnail' src='" + fullSize + "' />");
             $("#modal").modal('show');
         });
@@ -51,7 +55,7 @@ function buildGalleryRows(items, containerElement) {
             }
             var rowIndex = $(containerElement + " .row").length - 1;
             var galleryRow = $(containerElement + " .row")[rowIndex];
-            $(galleryRow).append("<div class='col-sm-2'><a class='expand' href='#'><img class='img-thumbnail' src='" +
+            $(galleryRow).append("<div class='col-sm-2'>" + items[0][i][0].split(".")[1] + "<a class='expand' href='#'><img class='img-thumbnail' name='" + items[0][i][0].split(".")[1] + "' src='" +
                 items[0][i][0] + "' data-full-img='" + items[0][i][1] + "'/><span class='glyphicon glyphicon-fullscreen'></span></a></div>");
         }
     }

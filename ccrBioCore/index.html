@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Untitled Document</title>
+    <title>CCR Bioinformatics Core</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/common/css/style.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
@@ -13,81 +13,43 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="pull-left">
-                <ul class="list-inline">
-                    <li>Login</li>
-                    <li>Register</li>
-                </ul>
-            </div>
+
+    <div class="col-sm-6">
+        <div class="galleryGroups thumbnail">
+            <a href="javascript:void(0);" class="showGallery" id="core">
+                <img src="images/core_heatmaps/thumbs/heatmap.ACC.png" alt="...">
+                <div class="caption">
+                    <h3>Core Heatmaps</h3>
+                    <p>Heatmaps showing expression of Cluster 1 (genes showing correlation with CYT in ≥25 TCGA datasets) and Cluster 2 (genes showing correlation with CYT in
+                        <25 and>14 TCGA datasets) genes in correlation with CYT (intensity bar below heatmap) in tumors of 36 TCGA datasets (in alphabetical order).</p>
+                </div>
+            </a>
         </div>
     </div>
-    <div id="main-container" class="container-fluid">
-        <header class="row">
-            <div class="col-sm-12">
-                <div class="pull-left">
-                    <div id="logo">Bioinformatics @
-                        <img src="images/ccrlogo.png" /></div>
-                </div>
-                <nav class="pull-right">
-                    <ul class="list-inline">
-                        <li>Home</li>
-                        <li>Ask for Help</li>
-                        <li>Training & Education</li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <div id="content" class="row">
 
-            <div class="col-sm-6">
-                <div class="galleryGroups thumbnail">
-                    <a href="javascript:void(0);" class="showGallery" id="core">
-                        <img src="images/core_heatmaps/thumbs/heatmap.ACC.png" alt="...">
-                        <div class="caption">
-                            <h3>Core Heatmaps</h3>
-                            <p>Heatmaps showing expression of Cluster 1 (genes showing correlation with CYT in ≥25 TCGA datasets) and Cluster 2 (genes showing correlation with CYT in
-                                <25 and>14 TCGA datasets) genes in correlation with CYT (intensity bar below heatmap) in tumors of 36 TCGA datasets (in alphabetical order).</p>
-                        </div>
-                    </a>
+    <div class="col-sm-6">
+        <div class="galleryGroups thumbnail">
+            <a href="javascript:void(0);" class="showGallery" id="pathway">
+                <img src="images/pw_heatmaps/thumbs/heatmap_path.ACC.png" alt="...">
+                <div class="caption">
+                    <h3>Pathway Heatmaps</h3>
+                    <p>Heatmaps showing expression of genes from T cell response pathways identified by CRISPR screen genes in correlation with CYT (intensity bar below heatmap) in tumors of 36 TCGA datasets (in alphabetical order). </p>
                 </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="galleryGroups thumbnail">
-                    <a href="javascript:void(0);" class="showGallery" id="pathway">
-                        <img src="images/pw_heatmaps/thumbs/heatmap_path.ACC.png" alt="...">
-                        <div class="caption">
-                            <h3>Pathway Heatmaps</h3>
-                            <p>Heatmaps showing expression of genes from T cell response pathways identified by CRISPR screen genes in correlation with CYT (intensity bar below heatmap) in tumors of 36 TCGA datasets (in alphabetical order). </p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <div id="galleries" class="row">
-                <div id="coreGallery" class="col-sm-12"></div>
-                <div id="pathwayGallery" class="col-sm-12"></div>
-            </div>
-
+            </a>
         </div>
     </div>
-    <footer class="container-fluid">
-        <ul class="pull-left list-unstyled list-inline">
-            <li><a href="http://ccr.cancer.gov/" title="Center for Cancer Research">CCR</a></li>
-            <li><a href="http://www.dhhs.gov/" title="U.S. Department of Health &amp; Human Services" target="_blank">HHS</a><span class="ext"></span></li>
-            <li><a href="http://www.cancer.gov/" title="National Cancer Institute" target="_blank">NCI</a></li>
-            <li><a href="http://www.nih.gov/" title="National Institutes of Health" target="_blank">NIH</a><span class="ext"></span></li>
-            <li><a href="http://www.usa.gov/" title="USA.gov" target="_blank">USA.gov</a><span class="ext"></span></li>
-        </ul>
-        <span class="pull-right">A service of the National Cancer Institute.</span>
 
-    </footer>
+    <div id="galleries" class="row">
+        <div id="coreGallery" class="col-sm-12"></div>
+        <div id="pathwayGallery" class="col-sm-12"></div>
+    </div>
+
     <div id="modal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"></h4>
                 </div>
                 <div class="modal-body"></div>
             </div>
