@@ -1,6 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=PT+Sans);
 @import url(https://fonts.googleapis.com/css?family=Lato);
-
 #topBar {
     color: #888;
     padding: 0 20px;
@@ -60,24 +59,34 @@ nav li a {
     margin: 10px auto;
 }
 
-.galleryGroups {
-    min-height: 300px;
+.galleryGroups,
+.thumbnail a,
+.thumbnail a:hover {
+    min-height: 331px;
 }
 
 .caption {
     text-align: center;
+    min-width: 100%;
 }
 
 #imgPreview:not(.show),
-.thumbnail a .caption p:not(.show),
+.thumbnail:not(.show) a .caption p,
 .expand img + span.glyphicon,
 #coreGallery:not(.show),
 #pathwayGallery:not(.show) {
     display: none;
 }
+
+.thumbnail a:hover .caption p,
+.thumbnail a:focus .caption p {
+    display: block;
+
+}
+
 .thumbnail.active .caption,
-.thumbnail:not(.active) a:hover .caption,
-.thumbnail:not(.active) a:focus .caption,
+.thumbnail a:hover .caption,
+.thumbnail a:focus .caption,
 .expand:hover span,
 .expand:focus span {
     top: 0;
@@ -95,6 +104,7 @@ nav li a {
 .thumbnail a .caption p {
     line-height: 1.5;
 }
+
 
 .thumbnail a:hover .caption p.show,
 .thumbnail a:focus .caption p,
@@ -115,7 +125,6 @@ nav li a {
     display: block;
     margin: 0 auto;
     padding: 0;
-
 }
 
 .expand span.glyphicon {
@@ -144,16 +153,22 @@ nav li a {
     color: inherit;
 }
 
+#feedback-link:hover {
+    background: #444D59;
+}
+
 .ext {
     background: url(images/extlink.png) right center no-repeat;
     padding-right: 12px;
 }
 
 .magnify {
-    background-color:#555;
-    background:rgba(0, 0, 0, 0.25);
-    border:5px solid rgba(0, 0, 0, 0);
-    z-index: 2000; /*make index higher than modal */
+    background-color: #555;
+    background: rgba(0, 0, 0, 0.25);
+    border: 5px solid rgba(0, 0, 0, 0);
+    cursor: crosshair;
+    z-index: 2000;
+    /*make index higher than modal */
 }
 
 footer li a,

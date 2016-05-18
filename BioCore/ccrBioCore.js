@@ -4,23 +4,16 @@ $(function () {
         $(this).find(".modal-body, .modal-title").html("");
     });
 
-    $(".thumbnail a").hover(function () {
-        $(this).find(".caption p").addClass("show");
-
-    }, function () {
-        $(this).find(".caption p").removeClass("show");
-    });
-
     $(".showGallery").on('click keypress', function () {
         if (this.id == "core") {
-            $("#pathwayGallery").removeClass("show");
+            $("#pathwayGallery, #pathway .caption p").removeClass("show");
             $("#pathway").parent().removeClass('active');
         } else {
-            $("#coreGallery").removeClass("show");
+            $("#coreGallery, #core .caption p").removeClass("show");
             $("#core").parent().removeClass('active');
         }
         $(this).parent().addClass("active");
-        $("#" + this.id + "Gallery").addClass("show");
+        $("#" + this.id + "Gallery, #" + this.id + " .caption p").addClass("show");
     });
 });
 
