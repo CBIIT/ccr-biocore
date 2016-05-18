@@ -60,7 +60,7 @@ function buildGalleryRows(items, containerElement) {
             }
             var rowIndex = $(containerElement + " .row").length - 1;
             var galleryRow = $(containerElement + " .row")[rowIndex];
-            $(galleryRow).append("<div class='col-sm-2'>" + items[0][i][0].split(".")[1] + "<a class='expand' href='#'><img class='img-thumbnail' name='" + items[0][i][0].split(".")[1] + "' src='" +
+            $(galleryRow).append("<div class='col-sm-4 col-md-2'>" + items[0][i][0].split(".")[1] + "<a class='expand' href='#'><img class='img-thumbnail' name='" + items[0][i][0].split(".")[1] + "' src='" +
                 items[0][i][0] + "' data-full-img='" + items[0][i][1] + "'/><span class='glyphicon glyphicon-fullscreen'></span></a></div>");
         }
     }

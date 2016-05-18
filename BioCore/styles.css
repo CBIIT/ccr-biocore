@@ -68,15 +68,16 @@ nav li a {
     text-align: center;
 }
 
+#imgPreview:not(.show),
 .thumbnail a .caption p:not(.show),
 .expand img + span.glyphicon,
 #coreGallery:not(.show),
 #pathwayGallery:not(.show) {
     display: none;
 }
-
-.thumbnail a:hover .caption,
-.thumbnail a:focus .caption,
+.thumbnail.active .caption,
+.thumbnail:not(.active) a:hover .caption,
+.thumbnail:not(.active) a:focus .caption,
 .expand:hover span,
 .expand:focus span {
     top: 0;
@@ -91,7 +92,7 @@ nav li a {
     color: white;
 }
 
-.thumbnail a:hover .caption p {
+.thumbnail a .caption p {
     line-height: 1.5;
 }
 
