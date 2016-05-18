@@ -27,6 +27,10 @@ function getImages() {
     })).done(function (coreImages, pwImages) {
         buildGalleryRows(coreImages, "#coreGallery");
         buildGalleryRows(pwImages, "#pathwayGallery");
+
+        $("#coreGallery").prepend("<a href='images/Core_heatmaps.zip' class='download btn btn-default'><span class='glyphicon glyphicon-download'></span> Download Core Heatmaps</a");
+        $("#pathwayGallery").prepend("<a href='images/Pathway_heatmaps.zip' class='download btn btn-default'><span class='glyphicon glyphicon-download'></span> Download Pathway Heatmaps</a");
+
         $("a.expand").on("click", function () {
             var fullSize = $(this).find("img").attr("data-full-img");
             $("#modal .modal-title").html($(this).find("img").attr('name'));
