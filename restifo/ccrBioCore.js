@@ -25,8 +25,8 @@ function getImages() {
     }), $.ajax({
         url: "pw.json"
     })).done(function (coreImages, pwImages) {
-        buildGalleryRows(coreImages, "#coreGallery");
-        buildGalleryRows(pwImages, "#pathwayGallery");
+        buildGalleryRows(coreImages, "#coreGallery","core");
+        buildGalleryRows(pwImages, "#pathwayGallery","pathway");
 
         $("#coreGallery").prepend("<a href='images/Core_heatmaps.zip' class='download btn btn-default'><span class='glyphicon glyphicon-download'></span> Download Core Heatmaps</a");
         $("#pathwayGallery").prepend("<a href='images/Pathway_heatmaps.zip' class='download btn btn-default'><span class='glyphicon glyphicon-download'></span> Download Pathway Heatmaps</a");
@@ -46,7 +46,7 @@ function getImages() {
     });
 }
 
-function buildGalleryRows(items, containerElement) {
+function buildGalleryRows(items, containerElement, imgGroupName) {
     if (items.length <= 0) {
         $(containerElement).append("<div class='alert alert-warning'>Cannot retrieve images. Try again later.</div>");
     } else {
@@ -57,8 +57,10 @@ function buildGalleryRows(items, containerElement) {
             }
             var rowIndex = $(containerElement + " .row").length - 1;
             var galleryRow = $(containerElement + " .row")[rowIndex];
-            $(galleryRow).append("<div class='col-sm-4 col-md-2'>" + items[0][i][0].split(".")[1] + "<a class='expand' href='#'><img class='img-thumbnail' name='" + items[0][i][0].split(".")[1] + "' src='" +
-                items[0][i][0] + "' data-full-img='" + items[0][i][1] + "'/><span class='glyphicon glyphicon-fullscreen'></span></a></div>");
+            var imgName = items[0][i][0].split(".")[1] + " " + imgGroupName;
+
+            $(galleryRow).append("<div class='col-sm-4 col-md-2'>" + items[0][i][0].split(".")[1] + "<a class='expand' href='#'><img class='img-thumbnail' name='" + imgName + "' src='" +
+                items[0][i][0] + "' alt='" + imgName + " heatmap' data-full-img='" + items[0][i][1] + "'/><span class='glyphicon glyphicon-fullscreen'></span></a></div>");
         }
     }
 }

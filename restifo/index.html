@@ -14,36 +14,80 @@
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="col-sm-6">
-            <div class="galleryGroups thumbnail">
-                <a href="#galleries" class="showGallery" id="core">
-                    <img src="images/core_heatmaps/thumbs/heatmap.ACC.png" alt="...">
-                    <div class="caption">
-                        <h3>Core Heatmaps</h3>
-                        <p>Heatmaps showing expression of Cluster 1 (genes showing correlation with CYT in ≥25 TCGA datasets) and Cluster 2 (genes showing correlation with CYT in
-                            <25 and>14 TCGA datasets) genes in correlation with CYT (intensity bar below heatmap) in tumors of 36 TCGA datasets (in alphabetical order).</p>
-                    </div>
-                </a>
+    <div id="topBar" class="container-fluid">
+        <div class="row-fluid clearfix">
+            <!-- Login | Register links -->
+            <div class="span3 loginlinks">
+                <div id="user_links">
+                    <a href="https://bioinformatics.cancer.gov/user" rel="tooltip" data-placement="bottom" data-original-title="Click here to login">Login</a> | <a href="https://bioinformatics.cancer.gov/user/register" rel="tooltip" data-placement="bottom" data-original-title="Click here to create an account">Register</a>
+                </div>
             </div>
-        </div>
-
-        <div class="col-sm-6">
-            <div class="galleryGroups thumbnail">
-                <a href="#galleries" class="showGallery" id="pathway">
-                    <img src="images/pw_heatmaps/thumbs/heatmap_path.ACC.png" alt="...">
-                    <div class="caption">
-                        <h3>Pathway Heatmaps</h3>
-                        <p>Heatmaps showing expression of genes from T cell response pathways identified by CRISPR screen genes in correlation with CYT (intensity bar below heatmap) in tumors of 36 TCGA datasets (in alphabetical order). </p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div id="galleries" class="row">
-            <div id="coreGallery" class="col-sm-12"></div>
-            <div id="pathwayGallery" class="col-sm-12"></div>
         </div>
     </div>
+    <div id="page-wrapper" class="container-fluid">
+        <header class="row">
+            <div id="logo" class="col-xs-12 col-md-6">
+                <img src="images/bioinformaticsatccrlogo.png" alt="bioinformatics at ccr">
+            </div>
+        </header>
+        <div id="title-region" class="row">
+            <div class="row inner">
+                <h1 class="page-title">Application title</h1>
+            </div>
+            <div class="row breadcrumb">
+                <div id="home-icon" class="glyphicon glyphicon-home">
+                    <a href="/"> <span class="icon-home"></span></a>
+                </div> <a href="/">Home</a> » Application Title</div>
+        </div>
+        <div id="main" class="container-fluid">
+            <div class="col-sm-6">
+                <div class="galleryGroups thumbnail">
+                    <a href="#galleries" class="showGallery" id="core">
+                        <img src="images/core_heatmaps/thumbs/heatmap.ACC.png" alt="core heatmaps gallery">
+                        <div class="caption">
+                            <h3>Core Heatmaps</h3>
+                            <em>Figures S17</em>
+                            <p>Heatmaps showing expression of Cluster 1 (genes showing correlation with CYT in ≥25 TCGA datasets) and Cluster 2 (genes showing correlation with CYT in
+                                <25 and>14 TCGA datasets) genes in correlation with CYT (intensity bar below heatmap) in tumors of 36 TCGA datasets (in alphabetical order).</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="galleryGroups thumbnail">
+                    <a href="#galleries" class="showGallery" id="pathway">
+                        <img src="images/pw_heatmaps/thumbs/heatmap_path.ACC.png" alt="pathway heatmaps gallery">
+                        <div class="caption">
+                            <h3>Pathway Heatmaps</h3>
+                            <em>Figures S18</em>
+                            <p>Heatmaps showing expression of genes from T cell response pathways identified by CRISPR screen genes in correlation with CYT (intensity bar below heatmap) in tumors of 36 TCGA datasets (in alphabetical order). </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div id="galleries" class="col-sm-12">
+                <div class="well well-sm"><em>Figures S17 and S18, Patel S., et. al, A genome-scale CRISPR screen to identify essential genes for cancer immunotherapy</em></div>
+                <div id="coreGallery" class="col-sm-12"></div>
+                <div id="pathwayGallery" class="col-sm-12"></div>
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid">
+        <div id="secondary_menu" class="col-sm-5">
+            <ul class="list-inline">
+                <li><a href="http://ccr.cancer.gov/" title="Center for Cancer Research">CCR</a></li>
+                <li><a href="http://www.dhhs.gov/" title="U.S. Department of Health &amp; Human Services" class="ext">HHS</a></li>
+                <li><a href="http://www.cancer.gov/" title="National Cancer Institute">NCI</a></li>
+                <li><a href="http://www.nih.gov/" title="National Institutes of Health" class="ext">NIH</a></li>
+                <li><a href="http://www.usa.gov/" title="USA.gov" class="ext">USA.gov</a></li>
+            </ul>
+        </div>
+
+        <div id="footer-note" class="col-sm-7">
+            <div class="pull-right">A service of the National Cancer Institute.</div>
+        </div>
+    </footer>
     <div id="modal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
