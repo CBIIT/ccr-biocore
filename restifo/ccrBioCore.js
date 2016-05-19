@@ -15,6 +15,10 @@ $(function () {
         $(this).parent().addClass("active");
         $("#" + this.id + "Gallery, #" + this.id + " .caption p").addClass("show");
     });
+
+    $(".mobile-nav").on("change", function () {
+        if(this.value.length > 0) window.location.href = this.value;
+    });
 });
 
 function getImages() {
@@ -25,8 +29,8 @@ function getImages() {
     }), $.ajax({
         url: "pw.json"
     })).done(function (coreImages, pwImages) {
-        buildGalleryRows(coreImages, "#coreGallery","core");
-        buildGalleryRows(pwImages, "#pathwayGallery","pathway");
+        buildGalleryRows(coreImages, "#coreGallery", "core");
+        buildGalleryRows(pwImages, "#pathwayGallery", "pathway");
 
         $("#coreGallery").prepend("<a href='images/Core_heatmaps.zip' class='download btn btn-default'><span class='glyphicon glyphicon-download'></span> Download Core Heatmaps</a");
         $("#pathwayGallery").prepend("<a href='images/Pathway_heatmaps.zip' class='download btn btn-default'><span class='glyphicon glyphicon-download'></span> Download Pathway Heatmaps</a");
@@ -37,9 +41,9 @@ function getImages() {
             $("#modal .modal-body").append("<img id='fullImage' class='img-thumbnail' src='" + fullSize + "' />");
 
             $("img#fullImage").loupe({
-                loupe: "magnify",
-                height: 150,
-                width: 300
+                loupe: "magnify"
+                , height: 150
+                , width: 300
             });
             $("#modal").modal('show');
         });

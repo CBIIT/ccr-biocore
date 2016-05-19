@@ -16,8 +16,39 @@ body {
     color: inherit;
 }
 
-div#logo {
+#nav li {
+    margin-left: 15px;
+    margin-right: 25px;
+}
+
+#nav li a {
+    font-family: Lato, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+    color: #000;
+}
+
+select.mobile-nav {
+    width: 100%;
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+#logo {
     padding-left: 35px;
+    margin-top: 24px;
+}
+
+#logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#logo img {
+    min-width: 375px;
+    min-height: 53px;
 }
 
 #pageTitle {
@@ -175,25 +206,6 @@ nav li a {
     padding: 40px;
 }
 
-#logo {
-    font-family: "Times New Roman";
-    font-weight: bold;
-    font-size: 24pt;
-    color: black;
-    padding-top: 10px;
-    padding-left: 20px;
-}
-
-#logo img {
-    min-height: 53px;
-    min-width: 375px;
-}
-
-#logo a {
-    text-decoration: none;
-    color: inherit;
-}
-
 #feedback-link:hover {
     background: #444D59;
 }
@@ -246,4 +258,26 @@ footer {
     -webkit-border-bottom-right-radius: 4px;
     -moz-border-bottom-left-radius: 4px;
     -moz-border-bottom-right-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .loginlinks,
+    .page-title {
+        text-align: center;
+        font-size: initial;
+    }
+    #logo img {
+        min-height: 45px;
+        min-width: 300px;
+        margin: 0 auto;
+    }
+    #title-region .inner {
+        padding: 10px 28px;
+    }
+    h1.page-title {
+        margin: 0;
+    }
+    div#secondary_menu {
+        text-align: center;
+    }
 }
