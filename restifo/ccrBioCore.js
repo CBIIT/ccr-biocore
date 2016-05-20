@@ -17,7 +17,7 @@ $(function () {
     });
 
     $(".mobile-nav").on("change", function () {
-        if(this.value.length > 0) window.location.href = this.value;
+        if (this.value.length > 0) window.location.href = this.value;
     });
 });
 
@@ -40,11 +40,14 @@ function getImages() {
             $("#modal .modal-title").html($(this).find("img").attr('name'));
             $("#modal .modal-body").append("<img id='fullImage' class='img-thumbnail' src='" + fullSize + "' />");
 
-            $("img#fullImage").loupe({
-                loupe: "magnify"
-                , height: 150
-                , width: 300
-            });
+            if (!detectMobileBrowser) {
+                $("img#fullImage").loupe({
+                    loupe: "magnify",
+                    height: 150,
+                    width: 300
+                });
+            }
+
             $("#modal").modal('show');
         });
     });
@@ -66,5 +69,14 @@ function buildGalleryRows(items, containerElement, imgGroupName) {
             $(galleryRow).append("<div class='col-sm-4 col-md-2'>" + items[0][i][0].split(".")[1] + "<a class='expand' href='#'><img class='img-thumbnail' name='" + imgName + "' src='" +
                 items[0][i][0] + "' alt='" + imgName + " heatmap' data-full-img='" + items[0][i][1] + "'/><span class='glyphicon glyphicon-fullscreen'></span></a></div>");
         }
+    }
+}
+
+
+function detectMobileBrowser() {
+    if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
+        return true;
+    } else {
+        return false;
     }
 }
