@@ -7,7 +7,7 @@ dirs_core = os.listdir("images/core_heatmaps/")
 arr_pw = list()
 arr_core = list()
 
-tn_size = 320, 240
+tn_size = 591, 591
 
 try:
     if not os.path.exists('images/core_heatmaps/thumbs/'):
@@ -40,11 +40,11 @@ try:
     arr_pw.sort()
     arr_core.sort()
 
-    with open("pw.json", 'wb') as outfile:
-        json.dump(arr_pw, outfile)
-
-    with open("core.json", 'wb') as outfile:
-        json.dump(arr_core, outfile)
+    with open("images.json", 'wb') as outfile:
+        data = {}
+        data['core'] = arr_core
+        data['pw'] = arr_pw
+        json.dump(data, outfile)
 
 except Exception as e:
     exc_type, exc_obj, exc_tb = sys.exc_info()
