@@ -72,7 +72,7 @@ function buildGalleryRows(items, containerElement, imgGroupName) {
                 $("#" + imgGroupName + "Preview").html("").addClass("show");
                 $("#" + imgGroupName + "Preview").html(img);
 
-                document.getElementsByClassName("imagePreview").scrollIntoView();
+                document.getElementsByClassName("imagePreview")[0].scrollIntoView();
 
                 if (isMobileBrowser()) {
                     $("#" + imgGroupName + "Preview img").attr("src", $(this).find("img").attr("data-zoom-image") );
