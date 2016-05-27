@@ -90,12 +90,17 @@ select.mobile-nav {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-top: 2px solid;
+    margin-top: 35px;
 }
 
 #main {
     background: #FDFDFD;
     padding-bottom: 20px;
     padding-top: 20px;
+}
+
+#main .well {
+    text-align: center;
 }
 
 .container-fluid {
@@ -154,12 +159,12 @@ nav li a {
     margin: 0 auto;
     background: url(images/loader.gif) 50% no-repeat;
     background-size: contain;
+    background-color: white;
     min-width: 100px;
     min-height: 100px;
 }
 
 .imagePreview,
-#loader:not(.show),
 #imgPreview:not(.show),
 .thumbnail:not(.show) a .caption p,
 .expand img + span.glyphicon,
@@ -220,10 +225,6 @@ nav li a {
     height: 100%;
     font-size: 100px;
     padding: 40px;
-}
-
-#loader {
-    color: #000;
 }
 
 #feedback-link:hover {

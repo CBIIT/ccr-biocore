@@ -31,6 +31,9 @@ function getImages() {
     }).done(function (data) {
         buildGalleryRows(data.core, "#coreGallery", "core");
         buildGalleryRows(data.pw, "#pathwayGallery", "pathway");
+    }).fail(function(jqXHR, textStatus){
+        $("#coreGallery, #pathwayGallery").append("<div class='alert alert-warning'>Cannot retrieve images. Try again later &hellip;</div>");
+
     });
 }
 
@@ -69,9 +72,12 @@ function buildGalleryRows(items, containerElement, imgGroupName) {
                 $("#" + imgGroupName + "Preview").html("").addClass("show");
                 $("#" + imgGroupName + "Preview").html(img);
 
-                document.getElementById(imgGroupName + "Preview").scrollIntoView();
+                document.getElementsByClassName("imagePreview").scrollIntoView();
 
-                if (isMobileBrowser) {
+                if (isMobileBrowser()) {
+                    $("#" + imgGroupName + "Preview img").attr("src", $(this).find("img").attr("data-zoom-image") );
+                }
+                else {
                     $("#" + imgGroupName + "Preview img").elevateZoom();
                 }
             });
