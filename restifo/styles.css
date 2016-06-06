@@ -126,9 +126,21 @@ nav li a {
     margin: 100px auto;
 }
 
+.galleria {
+    margin: 0 auto;
+    width: 900px;
+    max-width: 1200px;
+    min-width: 400px;
+
+}
+
 #galleries {
     margin: 15px auto;
     text-align: center;
+}
+#pathwayGallery, #coreGallery {
+    width: 100%;
+
 }
 
 #galleries .row {
@@ -150,6 +162,7 @@ nav li a {
     text-align: center;
     min-width: 100%;
 }
+
 .imagePreview img {
     max-height: 550px;
     max-width: 550px;
@@ -225,10 +238,6 @@ nav li a {
     height: 100%;
     font-size: 100px;
     padding: 40px;
-}
-
-#feedback-link:hover {
-    background: #444D59;
 }
 
 .download {
