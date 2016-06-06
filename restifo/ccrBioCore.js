@@ -92,7 +92,6 @@ function buildGalleryRows(items, containerElement, imgGroupName) {
                     dummy: "../images/loader.gif",
                     thumbQuality: false,
                     idleMode: false,
-                    //        imagecrop: 'landscape',
                     lightbox: true,
                     opacityOverlay: 0.65,
                     preload: 10
