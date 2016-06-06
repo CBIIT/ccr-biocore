@@ -4,25 +4,6 @@ from PIL import Image
 bg_size = 600,600
 tn_size = 296, 296
 
-try:
-    arr_pw = processImages('pw_heatmaps')
-    arr_core = processImages('core_heatmaps')
-
-    with open("images.json", 'wb') as outfile:
-        data = {}
-        data['core'] = arr_core
-        data['pw'] = arr_pw
-        json.dump(data, outfile)
-
-except Exception as e:
-    exc_type, exc_obj, exc_tb = sys.exc_info()
-    fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-    print("EXCEPTION------------------------------", exc_type, fname, exc_tb.tb_lineno)
-finally:
-    print "done....<Press enter key to exit>"
-    raw_input()
-
-
 def processImages(dirName):
     try:
         print("In process images")
@@ -55,10 +36,28 @@ def processImages(dirName):
                     'images/' + dirName + '/big/' + file ])
 
             filesList.sort()
-
     except Exception as e:
         exc_type, exc_obj, exc_tb = sys.exc_info()
         fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
         print("EXCEPTION------------------------------", exc_type, fname, exc_tb.tb_lineno)
     finally:
         return filesList
+
+
+try:
+    arr_pw = processImages('pw_heatmaps')
+    arr_core = processImages('core_heatmaps')
+
+    with open("images.json", 'wb') as outfile:
+        data = {}
+        data['core'] = arr_core
+        data['pw'] = arr_pw
+        json.dump(data, outfile)
+
+except Exception as e:
+    exc_type, exc_obj, exc_tb = sys.exc_info()
+    fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+    print("EXCEPTION------------------------------", exc_type, fname, exc_tb.tb_lineno)
+finally:
+    print "done....<Press enter key to exit>"
+    raw_input()

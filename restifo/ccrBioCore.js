@@ -78,13 +78,16 @@ function buildGalleryRows(items, containerElement, imgGroupName) {
         }
 
         if (imagesArray.length > 0) {
+
+        $(containerElement).prepend("<a href='images/" + imgGroupName.capitalize() +
+            "_heatmaps.zip' class='download btn btn-default'><span class='glyphicon glyphicon-download'></span> Download  " + imgGroupName.capitalize() + " Heatmaps</a>");
             if (Galleria) {
-                Galleria.loadTheme('https://cdnjs.cloudflare.com/ajax/libs/galleria/1.4.2/themes/classic/galleria.classic.js');
-                //Galleria.loadTheme('ccrbcTheme/galleria.ccrbcTheme.js');
+//                Galleria.loadTheme('https://cdnjs.cloudflare.com/ajax/libs/galleria/1.4.2/themes/classic/galleria.classic.js');
+                Galleria.loadTheme('ccrbcTheme/galleria.ccrbc.js');
                 Galleria.configure({
                     wait: true,
-                    width: '100%',
-                    height: '1.5',
+                    width: '90%',
+                    height: '0.7',
                     responsive: true,
                     dummy: "../images/loader.gif",
                     thumbQuality: false,
@@ -98,7 +101,8 @@ function buildGalleryRows(items, containerElement, imgGroupName) {
                 Galleria.run(containerElement, {
                     dataSource: imagesArray
                 });
-            } else {
+            }
+            else {
                 // fallback if galleria does not load
                 $(containerElement).append("<div class='row'><div id='" + imgGroupName + "Preview' class='imagePreview'></div></div><div class='row'><button type='button' class='prev col-sm-2 pull-left'><span class='glyphicon glyphicon-arrow-left'></span></button><span class='imgIndex'></span><button type='button' class='next col-sm-2 pull-right'><span class='glyphicon glyphicon-arrow-right'></span></button></div><div class='row'></div>");
 
@@ -142,9 +146,6 @@ function buildGalleryRows(items, containerElement, imgGroupName) {
                 }
             }
         }
-
-        $(containerElement).prepend("<a href='images/" + imgGroupName.capitalize() +
-            "_heatmaps.zip' class='download btn btn-default'><span class='glyphicon glyphicon-download'></span> Download  " + imgGroupName.capitalize() + " Heatmaps</a>");
     }
 }
 
