@@ -18,12 +18,15 @@ Galleria.addTheme({
         // add some elements
         this.addElement('info-link','info-close');
 
-        this.appendChild("info-link", "<span class='glyphicon glyphicon-info-sign'></span>");
-        this.appendChild("image-nav-left","<span class='glyphicon glyphicon-chevron-left'></span>")
-        this.appendChild("image-nav-right","<span class='glyphicon glyphicon-chevron-right'></span>");
+        this.appendChild("info-link", "<span class='glyphicon glyphicon-info-sign' tabindex='0'></span>");
+        this.appendChild("image-nav-left","<span class='glyphicon glyphicon-chevron-left' tabindex='0'></span>")
+        this.appendChild("image-nav-right","<span class='glyphicon glyphicon-chevron-right' tabindex='0'></span>");
 
-        this.appendChild("thumb-nav-left","<span class='glyphicon glyphicon-chevron-left'></span>")
-        this.appendChild("thumb-nav-right","<span class='glyphicon glyphicon-chevron-right'></span>");
+        this.appendChild("thumb-nav-left","<span class='glyphicon glyphicon-chevron-left' tabindex='0'></span>")
+        this.appendChild("thumb-nav-right","<span class='glyphicon glyphicon-chevron-right' tabindex='0'></span>");
+
+        this.appendChild("lightbox-prev","<span class='glyphicon glyphicon-chevron-left' tabindex='0'></span>")
+        this.appendChild("lightbox-next","<span class='glyphicon glyphicon-chevron-right' tabindex='0'></span>");
 
          this.appendChild("info-close","<span>&times;</span>");
 

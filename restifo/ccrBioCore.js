@@ -10,14 +10,14 @@ function initEvents() {
 
     $(".showGallery").on('click keypress', function () {
         if (this.id == "core") {
-            $("#pathwayGallery, #pathway .caption p").removeClass("show");
+            $("#pathwayGallery, #pathway .caption p,.pathway").removeClass("show");
             $("#pathway").parent().removeClass('active');
         } else {
-            $("#coreGallery, #core .caption p").removeClass("show");
+            $("#coreGallery, #core .caption p, .core").removeClass("show");
             $("#core").parent().removeClass('active');
         }
         $(this).parent().addClass("active");
-        $("#" + this.id + "Gallery, #" + this.id + " .caption p").addClass("show");
+        $("#" + this.id + "Gallery, #" + this.id + " .caption p, ." + this.id).addClass("show");
     });
 
     $(".mobile-nav").on("change", function () {
@@ -79,8 +79,8 @@ function buildGalleryRows(items, containerElement, imgGroupName) {
 
         if (imagesArray.length > 0) {
 
-        $(containerElement).prepend("<a href='images/" + imgGroupName.capitalize() +
-            "_heatmaps.zip' class='download btn btn-default'><span class='glyphicon glyphicon-download'></span> Download  " + imgGroupName.capitalize() + " Heatmaps</a>");
+        $(containerElement).before("<a href='images/" + imgGroupName.capitalize() +
+            "_heatmaps.zip' class='download btn btn-lg btn-primary " + imgGroupName + "'><span class='glyphicon glyphicon-download'></span> Download " + imgGroupName.capitalize() + " Heatmaps</a>");
             if (Galleria) {
 //                Galleria.loadTheme('https://cdnjs.cloudflare.com/ajax/libs/galleria/1.4.2/themes/classic/galleria.classic.js');
                 Galleria.loadTheme('ccrbcTheme/galleria.ccrbc.js');

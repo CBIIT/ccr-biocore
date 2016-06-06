@@ -142,6 +142,9 @@ nav li a {
     width: 100%;
 
 }
+.core:not(.show),.pathway:not(.show) {
+    display: none;
+}
 
 #galleries .row {
     margin: 10px auto;
