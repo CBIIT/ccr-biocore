@@ -237,3 +237,8 @@
 
 .galleria-theme-ccrbc.galleria-container.videoplay .galleria-info,
 .galleria-theme-ccrbc.galleria-container.videoplay .galleria-counter{ display:none!important; }
+
+.galleria-image .galleria-frame, .galleria-lightbox-content .galleria-lightbox-image {
+    background: url("../images/loader.gif") no-repeat;
+    background-position: center;
+}
