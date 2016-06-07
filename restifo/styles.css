@@ -126,23 +126,18 @@ nav li a {
     margin: 100px auto;
 }
 
-.galleria {
-    margin: 0 auto;
-    width: 900px;
-    max-width: 1200px;
-    min-width: 400px;
-
-}
-
 #galleries {
     margin: 15px auto;
     text-align: center;
 }
-#pathwayGallery, #coreGallery {
-    width: 100%;
 
+#pathwayGallery,
+#coreGallery {
+    width: 100%;
 }
-.core:not(.show),.pathway:not(.show) {
+
+.core:not(.show),
+.pathway:not(.show) {
     display: none;
 }
 
@@ -171,7 +166,9 @@ nav li a {
     max-width: 550px;
 }
 
-.imagePreview img, #coreGallery img, #pathwayGallery img {
+.imagePreview img,
+#coreGallery img,
+#pathwayGallery img {
     margin: 0 auto;
     background: url(images/loader.gif) 50% no-repeat;
     background-size: contain;
@@ -285,37 +282,40 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .thumbnail.active .caption,
+    .thumbnail a:hover .caption,
+    .thumbnail a:focus .caption,
+    .expand:hover span,
+    .expand:focus span {
+        min-height: 100%;
+    }
+    #page-wrapper {
+        margin: 0 auto;
+    }
     .imagePreview:not(.show) {
         display: none;
     }
-
     .imagePreview img {
         max-height: 400px;
         max-width: 400px;
     }
-
     .loginlinks,
     .page-title {
         text-align: center;
         font-size: initial;
     }
-
     #logo img {
         min-height: 45px;
         min-width: 300px;
         margin: 0 auto;
     }
-
     #title-region .inner {
         padding: 10px 28px;
     }
-
     h1.page-title {
         margin: 0;
     }
-
     #secondary_menu {
         text-align: center;
     }
-
 }

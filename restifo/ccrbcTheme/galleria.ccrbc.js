@@ -114,10 +114,18 @@
             });
 
             this.bind('loadfinish', function (e) {
-                if (e.imageTarget) $(e.imageTarget).attr("alt", e.galleriaData.title);
-                if (e.thumbTarget) $(e.thumbTarget).attr("alt", e.galleriaData.title);
+                if (e.imageTarget)
+                    $(e.imageTarget).attr("alt", e.galleriaData.title);
+                if (e.thumbTarget)
+                    $(e.thumbTarget).attr("alt", e.galleriaData.title);
                 this.$('loader').fadeOut(200);
             });
+
+            if(options.responsive) {
+                this.setOptions('height', 1.5);
+                this.setOptions('touchTransition', 'slide');
+                this.$('counter, image-nav, thumb-nav-left,thumb-nav-right').hide();
+            }
         }
     });
 

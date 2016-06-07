@@ -83,12 +83,13 @@ function buildGalleryRows(items, containerElement, imgGroupName) {
             "_heatmaps.zip' class='download btn btn-lg btn-primary " + imgGroupName + "'><span class='glyphicon glyphicon-download'></span> Download " + imgGroupName.capitalize() + " Heatmaps</a>");
             if (Galleria) {
 //                Galleria.loadTheme('https://cdnjs.cloudflare.com/ajax/libs/galleria/1.4.2/themes/classic/galleria.classic.js');
+                mobile = isMobileBrowser();
                 Galleria.loadTheme('ccrbcTheme/galleria.ccrbc.js');
                 Galleria.configure({
                     wait: true,
                     width: '90%',
                     height: '0.7',
-                    responsive: true,
+                    responsive: mobile,
                     dummy: "../images/loader.gif",
                     thumbQuality: false,
                     idleMode: false,
