@@ -5,6 +5,11 @@
     overflow: hidden;
 }
 
+.galleria button {
+    border: none;
+    background: none;
+}
+
 .galleria-theme-ccrbc .galleria-image-nav .glyphicon {
     font-size: 3.5em;
 }
