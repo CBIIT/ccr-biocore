@@ -76,6 +76,7 @@
 .galleria-theme-ccrbc .galleria-thumbnails .galleria-image:not(.active) {
     opacity: .5;
 }
+
 .galleria-theme-ccrbc .galleria-thumbnails .galleria-image .thumbnail-caption {
     display: block;
     position: absolute;
