@@ -17,10 +17,6 @@
 
             thisGallery = this;
 
-            $.each(thisGallery._thumbnails, function(i, tn){
-                tn.image.alt = thisGallery.getData(i).title;
-            });
-
             // add some elements
             this.addElement('info-link', 'info-close');
 
@@ -42,7 +38,7 @@
                 touch = Galleria.TOUCH;
 
             // show loader & counter with opacity
-            this.$('loader,counter').show().css('opacity', 0.4);
+            this.$('loader,counter').show() //.css('opacity', 0.4);
 
             // some stuff for non-touch browsers
             if (!touch) {
@@ -68,7 +64,7 @@
             }
 
             var activate = function (e) {
-                $(e.thumbTarget).css('opacity', 1).parent().siblings().children().css('opacity', 0.6);
+                //$(e.thumbTarget).parent().css('opacity', 0.6);
             };
 
             // bind keyboard navigation event handlers
@@ -85,39 +81,25 @@
             });
 
             this.bind('thumbnail', function (e) {
-                if (!touch) {
-                    // fade thumbnails on hover
-                    $(e.thumbTarget).css('opacity', 0.6).parent().hover(function () {
-                        $(this).not('.active').children().stop().fadeTo(100, 1);
-                    }, function () {
-                        $(this).not('.active').children().stop().fadeTo(400, 0.6);
-                    });
-
-                    if (e.index === this.getIndex()) {
-                        $(e.thumbTarget).css('opacity', 1);
-                    }
-                } else {
-                    $(e.thumbTarget).css('opacity', this.getIndex() ? 1 : 0.6).bind('click:fast', function () {
-                        $(this).css('opacity', 1).parent().siblings().children().css('opacity', 0.6);
-                    });
-                }
+                $(e.thumbTarget).attr("alt", e.galleriaData.title).after("<div class='thumbnail-caption'>"+ e.galleriaData.title +"</div>");
             });
 
             this.bind('loadstart', function (e) {
-                if (!e.cached) {
+                if (!e.cached)
                     this.$('loader').show().fadeTo(200, 0.4);
-                }
+
                 window.setTimeout(function () {
                     activate(e);
                 }, touch ? 300 : 0);
                 this.$('info').toggle(this.hasInfo());
+                
+                if(e.thumbTarget)
+                    $("<div class='thumbnail_caption'>" + e.galleriaData.title + "</div>");
             });
 
             this.bind('loadfinish', function (e) {
                 if (e.imageTarget)
                     $(e.imageTarget).attr("alt", e.galleriaData.title);
-                if (e.thumbTarget)
-                    $(e.thumbTarget).attr("alt", e.galleriaData.title);
                 this.$('loader').fadeOut(200);
             });
 

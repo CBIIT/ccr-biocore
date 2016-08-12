@@ -71,8 +71,8 @@ function buildGalleryRows(items, containerElement, imgGroupName) {
             imageObject.thumb = items[i][0];
             imageObject.big = items[i][1];
             imageObject.image = items[i][2];
-            imageObject.title = imageObject.image.split(".")[1] + " " + imgGroupName;
-            imageObject.description = imageObject.title.replace(" ", "_").toLowerCase();
+            imageObject.title = imageObject.image.split(".")[1];
+            imageObject.description = imageObject.image.split(".")[1] + " " + imgGroupName;
 
             imagesArray.push(imageObject);
         }
@@ -87,11 +87,11 @@ function buildGalleryRows(items, containerElement, imgGroupName) {
                 Galleria.loadTheme('ccrbcTheme/galleria.ccrbc.js');
                 Galleria.configure({
                     wait: true,
-                    width: '90%',
-                    height: '0.7',
+                    width: '100%',
+                    height: '0.9',
                     responsive: mobile,
                     dummy: "../images/loader.gif",
-                    thumbQuality: false,
+                    thumbPosition: "top center",
                     idleMode: false,
                     lightbox: true,
                     opacityOverlay: 0.65,

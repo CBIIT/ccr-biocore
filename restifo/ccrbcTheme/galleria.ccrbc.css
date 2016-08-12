@@ -73,6 +73,18 @@
     cursor: pointer;
 }
 
+.galleria-theme-ccrbc .galleria-thumbnails .galleria-image .thumbnail-caption {
+    display: block;
+    position: absolute;
+    height: 15px;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    color: #000;
+    font-weight: bold;
+    z-index: 2;
+}
+
 .galleria-theme-ccrbc .galleria-counter {
     position: absolute;
     bottom: 10px;
