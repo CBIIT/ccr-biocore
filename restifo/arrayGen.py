@@ -1,7 +1,7 @@
 import os, sys, json
 from PIL import Image
 
-bg_size = 600,600
+bg_size = 900,900
 tn_size = 296, 296
 
 def processImages(dirName):
@@ -24,15 +24,14 @@ def processImages(dirName):
             print("working on file '" + file + "'")
             img_tn = Image.open('images/' + dirName + '/' + file)
             img_tn.thumbnail(tn_size)
-            img_tn.save('images/' + dirName + '/thumbs/' + file, quality=70)
+            img_tn.save('images/' + dirName + '/thumbs/' + file, quality=50)
 
             img_big = Image.open('images/' + dirName + '/' + file)
             img_big.thumbnail(bg_size)
-            img_big.save('images/' + dirName + '/big/' + file, quality=70)
+            img_big.save('images/' + dirName + '/big/' + file, quality=60)
 
             filesList.append([
                     'images/' + dirName + '/thumbs/' + file,
-                    'images/' + dirName + '/' + file,
                     'images/' + dirName + '/big/' + file ])
 
             filesList.sort()

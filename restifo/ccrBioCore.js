@@ -70,7 +70,7 @@ function buildGalleryRows(items, containerElement, imgGroupName) {
 
             imageObject.thumb = items[i][0];
             imageObject.big = items[i][1];
-            imageObject.image = items[i][2];
+            imageObject.image = items[i][1];
             imageObject.title = imageObject.image.split(".")[1];
             imageObject.description = imageObject.image.split(".")[1] + " " + imgGroupName;
 
@@ -82,7 +82,6 @@ function buildGalleryRows(items, containerElement, imgGroupName) {
         $(containerElement).before("<a href='images/" + imgGroupName.capitalize() +
             "_heatmaps.zip' class='download btn btn-lg btn-primary " + imgGroupName + "'><span class='glyphicon glyphicon-download'></span> Download " + imgGroupName.capitalize() + " Heatmaps</a>");
             if (Galleria) {
-//                Galleria.loadTheme('https://cdnjs.cloudflare.com/ajax/libs/galleria/1.4.2/themes/classic/galleria.classic.js');
                 mobile = isMobileBrowser();
                 Galleria.loadTheme('ccrbcTheme/galleria.ccrbc.js');
                 Galleria.configure({
@@ -101,49 +100,6 @@ function buildGalleryRows(items, containerElement, imgGroupName) {
                 Galleria.run(containerElement, {
                     dataSource: imagesArray
                 });
-            }
-            else {
-                // fallback if galleria does not load
-                $(containerElement).append("<div class='row'><div id='" + imgGroupName + "Preview' class='imagePreview'></div></div><div class='row'><button type='button' class='prev col-sm-2 pull-left'><span class='glyphicon glyphicon-arrow-left'></span></button><span class='imgIndex'></span><button type='button' class='next col-sm-2 pull-right'><span class='glyphicon glyphicon-arrow-right'></span></button></div><div class='row'></div>");
-
-                for (var i = 0; i < items.length; i++) {
-                    if (i > 0 && (i % 6 === 0)) {
-                        $(containerElement).append("<div class='row'></div>");
-                    }
-
-                    var rowIndex = $(containerElement + " .row").length - 1;
-                    var galleryRow = $(containerElement + " .row")[rowIndex];
-
-                    var tn_filename = items[i][0];
-                    var fs_filename = items[i][1];
-
-                    var imgTitle = tn_filename.split(".")[1] + " " + imgGroupName;
-                    var imgName = imgTitle.replace(" ", "_").toLowerCase();
-
-                    var img = new Image();
-                    img.src = tn_filename;
-
-                    $(galleryRow).append("<div class='col-sm-4 col-md-2'>" +
-                        tn_filename.split(".")[1] + "<a class='expand' href='#'>" +
-                        "<img class='img-thumbnail' name='" + imgName + "' src='" +
-                        tn_filename + "' data-zoom-image='" + fs_filename + "' alt='" +
-                        imgTitle + " heatmap' />" + "<span class='glyphicon glyphicon-fullscreen'>" + "</span></a></div>");
-
-                    $(containerElement).find("a.expand").on("click", function () {
-                        var img = $(this).find("img").clone();
-
-                        $("#" + imgGroupName + "Preview").html("").addClass("show");
-                        $("#" + imgGroupName + "Preview").html(img);
-
-                        document.getElementsByClassName("imagePreview")[0].scrollIntoView();
-
-                        if (isMobileBrowser()) {
-                            $("#" + imgGroupName + "Preview img").attr("src", $(this).find("img").attr("data-zoom-image"));
-                        } else {
-                            $("#" + imgGroupName + "Preview img").elevateZoom();
-                        }
-                    });
-                }
             }
         }
     }
