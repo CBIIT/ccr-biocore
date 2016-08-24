@@ -276,6 +276,16 @@
     background-position: center;
 }
 
+.galleria-lightbox-box {
+    min-height: 910px;
+    min-width: 900px;
+}
+
+.galleria-lightbox-content .galleria-lightbox-image {
+    max-height: 910px;
+    max-width: 910px;
+}
+
 @media (max-width: 768px) {
     .galleria {
         margin-left: -30px;

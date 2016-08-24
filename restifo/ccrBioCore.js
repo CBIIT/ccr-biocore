@@ -29,11 +29,13 @@ function getImages() {
     $.ajax({
         url: "images.json"
     }).done(function (data) {
+        var activeGallery = $(".galleria.show");
+
         buildGalleryRows(data.core, "#coreGallery", "core");
         buildGalleryRows(data.pw, "#pathwayGallery", "pathway");
+
         if (!Galleria) {
             $(".prev, .next ").on("click", function () {
-                var activeGallery = $("#coreGallery, #pathwayGallery").has(".show");
                 var currentImg = activeGallery.find(".imagePreview img")[0];
                 var tn = $("img[name='" + currentImg.name + "']").not(currentImg);
 
