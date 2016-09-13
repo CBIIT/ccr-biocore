@@ -11,8 +11,8 @@ def processImages(dirName):
         filesList = list()
         imageDir = os.listdir("images/" + dirName + "/" )
 
-        if not os.path.exists('images/' + dirName + '/big/'):
-            os.makedirs('images/' + dirName + '/big/')
+#        if not os.path.exists('images/' + dirName + '/big/'):
+#            os.makedirs('images/' + dirName + '/big/')
 
         if not os.path.exists('images/' + dirName + '/thumbs/'):
             os.makedirs('images/' + dirName + '/thumbs/')
@@ -26,13 +26,14 @@ def processImages(dirName):
             img_tn.thumbnail(tn_size)
             img_tn.save('images/' + dirName + '/thumbs/' + file, quality=50)
 
-            img_big = Image.open('images/' + dirName + '/' + file)
-            img_big.thumbnail(bg_size)
-            img_big.save('images/' + dirName + '/big/' + file, quality=60)
+#            img_big = Image.open('images/' + dirName + '/' + file)
+#            img_big.thumbnail(bg_size)
+#            img_big.save('images/' + dirName + '/big/' + file, quality=60)
 
             filesList.append([
-                    'images/' + dirName + '/thumbs/' + file,
-                    'images/' + dirName + '/big/' + file ])
+                    'images/' + dirName + '/thumbs/' + file
+                    ,'images/' + dirName + '/' + file
+            ])
 
             filesList.sort()
     except Exception as e:

@@ -89,7 +89,7 @@ function buildGalleryRows(items, containerElement, imgGroupName) {
                 Galleria.configure({
                     wait: true,
                     width: '100%',
-                    height: '0.9',
+                    height: '1',
                     responsive: mobile,
                     dummy: "../images/loader.gif",
                     thumbPosition: "top center",
