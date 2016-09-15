@@ -88,8 +88,8 @@ function buildGalleryRows(items, containerElement, imgGroupName) {
                 Galleria.loadTheme('ccrbcTheme/galleria.ccrbc.js');
                 Galleria.configure({
                     wait: true,
-                    width: '100%',
-                    height: '1',
+                    width: "auto",
+                    height: 787,
                     responsive: mobile,
                     dummy: "../images/loader.gif",
                     thumbPosition: "top center",
